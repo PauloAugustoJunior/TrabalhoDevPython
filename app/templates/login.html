@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'partials/head.html' %}
+
+<body>
+
+    {% include 'partials/dropdow.html' %}
+
+    <section>
+        <div class="container-fluid" style="background-color: #c4c4c4;">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        HOJE
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        A CADA HORA
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        SEMANAL
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        MENSAL
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        MAIS PREVISÕES
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <div class="align-items-center rounded shadow"
+                style=" width: 400px; height: 400px; margin-top: 5%; margin-left: 38%; background-color: #c4c4c4;">
+                <div class="" style="width: 90%; height: 90%; margin: 5%;">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Digite seu email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Senha</label>
+                            <a href="#" style="text-decoration: none; margin-left: 55%;">Esqueci a senha</a>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Digite sua senha">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success" type="submit">ENTRAR</button>
+                        </div>
+                    </form>
+                    <div class="d-grid gap-2">
+                        <a href="/cadastrar" class="btn btn-primary" type="submit" style="margin-top: 2%;">CADASTRAR-SE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {% include 'partials/footer.html' %}
+    
+</body>
+
+</html>
