@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'partials/head.html' %}
+
+<body>
+
+    {% include 'partials/header.html' %}
+
+    {% include 'partials/dropdown.html' %}
+
+    <section>
+        <div class="container-fluid base-conteiner">
+            <div class="align-items-center rounded shadow"
+                style=" width: 400px; height: 400px; margin-top: 5%; margin-left: 38%; background-color: #c4c4c4;">
+                <div class="" style="width: 90%; height: 90%; margin: 5%;">
+                    <form>
+                        <div class="mb-3">
+                            <label for="text" class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" id=""
+                                aria-describedby="" placeholder="Digite seu nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Digite seu email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Digite sua senha">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Confirmar senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Digite sua senha">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="/" class="btn btn-success" type="submit" style="margin-top: 2%;">CADASTRAR</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html' %}
+    
+</body>
+
+</html>

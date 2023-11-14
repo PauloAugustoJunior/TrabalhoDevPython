@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'partials/head.html' %}
+
+<body style="overflow-x: hidden;">
+    
+    {% include 'partials/dropdow.html' %}
+    <section>
+        <div class="container-fluid" style="background-color: #c4c4c4;">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        HOJE
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        A CADA HORA
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        SEMANAL
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        MENSAL
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group ml-3" style="margin-left: 1%;">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        MAIS PREVISÕES
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid" style="margin-left: 15%; margin-top: 2%;">
+            <div>
+                <div>
+                    <h4>Dados cadastrados</h4>
+                </div>
+                <div class="d-flex" >
+                    <div style="margin: 2%; width: 400px;">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nome completo</label>
+                                <input type="texr" class="form-control" id="text" aria-describedby="emailHelp"
+                                    placeholder="Fulano de tal">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                        </form>
+                    </div>
+                    <div style="margin: 2%; width: 400px;">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                <input type="texr" class="form-control" id="text" aria-describedby="emailHelp"
+                                    placeholder="Fulano@gmail.com">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <h4>Alterar dados</h4>
+                </div>
+                <div class="d-flex">
+                    <div style="margin: 2%; width: 400px;">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nome completo</label>
+                                <input type="texr" class="form-control" id="text" aria-describedby="emailHelp"
+                                    placeholder="Fulano de tal">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                        </form>
+                    </div>
+                    <div style="margin: 2%; width: 400px;">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                <input type="texr" class="form-control" id="text" aria-describedby="emailHelp"
+                                    placeholder="Fulano@gmail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Confirmar senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2" style="width: 20%; margin-left: 20%;">
+                <a href="usuario/" class="btn btn-success" type="submit" style="margin-top: 2%;"><i class="fa-solid fa-floppy-disk"></i> SALVAR</a>
+                <a href="/" class="btn btn-danger" type="submit" style="margin-top: 2%;"><i class="fa-solid fa-trash-can"></i> EXCLUIR CONTA</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html' %}
+</body>
+
+</html>
