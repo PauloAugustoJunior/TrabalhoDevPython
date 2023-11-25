@@ -10,7 +10,7 @@
 
     {% include 'partials/dropdown.html' %}
 
-    <section>
+    <!-- <section>
         <div class="main">
             <div class="mt-4 d-flex justify-content-start main-conteiner">
                 <div class="col-6 main-intens">
@@ -132,10 +132,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
-    {% include 'partials/footer.html' %}
-
+    {% for objeto in objetos %}
+            <li>{{ objeto.cidade }}</li>
+            
+        {% endfor %}
 </body>
 
 </html>
