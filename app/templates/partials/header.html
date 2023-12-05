@@ -1,4 +1,4 @@
-<!-- <section>
+<section>
     <div class="container-fluid bg-primary header-conteiner">
         <div class="row align-items-center" id="header-item3">
             <div class="col">
@@ -33,19 +33,5 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Buscar por Cidade</title>
-</head>
-<body>
-    <h1>Buscar por Cidade</h1>
-    <form method="post" action="{% url 'buscar_por_cidade' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Buscar</button>
-    </form>
-</body>
-</html>

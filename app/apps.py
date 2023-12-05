@@ -7,4 +7,3 @@ class AppConfig(AppConfig):
     name = 'app'
     def ready(self):
         from .models import PrevisaoTempoSimples
-        print(len(PrevisaoTempoSimples.objects.all()))

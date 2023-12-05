@@ -25,3 +25,9 @@ class PrevisaoTempoSimples(models.Model):
 
     class Meta:
         db_table = 'previsao_tempo_simples'
+
+class Usuario(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    senha = models.CharField(max_length=100)
+    local_usuario = models.CharField(max_length=100)

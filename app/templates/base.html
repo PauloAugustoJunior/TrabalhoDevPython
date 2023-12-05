@@ -10,14 +10,19 @@
 
     {% include 'partials/dropdown.html' %}
 
-    <!-- <section>
+    <section>
         <div class="main">
             <div class="mt-4 d-flex justify-content-start main-conteiner">
                 <div class="col-6 main-intens">
                     <div class="justify-content-start">
                         <div>
-                            <h3 style="font-weight:bold; font-size:40px;"><i
-                                    class="fa-solid fa-location-dot text-info"></i> Palmas-To</h3>
+                            {% if dados_exibir%}
+                            <h3 style="font-weight:bold; font-size:40px;">
+                                <i class="fa-solid fa-location-dot text-info"></i> {{dados_exibir.0.cidade}} - {{dados_exibir.0.uf}}
+                            </h3>
+                            {% else %}
+                                <p>ERROR</p>
+                            {% endif %}
                         </div>
                         <div class="d-flex row ">
                             <div class="col fs-1 text">
@@ -25,15 +30,13 @@
                                         class="fa-solid fa-sun"></i></h1>
                             </div>
                             <div class="col " style="margin-left: -50%;">
-                                <h1 style="margin: 2px;">35º</h1>
-                                <p style="margin: 2px;">Sensação de 35º</p>
+                                <h1 style="margin: 2px;">xxº</h1>
+                                <p style="margin: 2px;">Sensação de xxº</p>
                             </div>
                             <div class="col" style="margin-left: -49%;">
-                                <p style="margin: 2px;"> <i class="fa-solid fa-cloud-showers-heavy text-info "></i>
-                                    Chuva: 10%</p>
-                                <p style="margin: 2px;"> <i class="fa-solid fa-droplet  text-info"></i> Umidade: 65%</p>
-                                <p style="margin: 2px;"> <i class="fa-solid fa-wind" style="color:gray;"></i> Vento: 5
-                                    km/h</p>
+                                <p style="margin: 2px;"> <i class="fa-solid fa-cloud-showers-heavy text-info "></i> Chuva: xx</p>
+                                <p style="margin: 2px;"> <i class="fa-solid fa-droplet  text-info"></i> Umidade max.: {{dados_exibir.0.umidade_max}}% </p>
+                                <p style="margin: 2px;"> <i class="fa-solid fa-wind" style="color:gray;"></i> Vento: {{dados_exibir.0.int_vento}} </p>
                             </div>
                         </div>
                     </div>
@@ -41,60 +44,60 @@
                         <div class="card col-2 align-items-center" style=" margin: 3px; padding: 0;">
                             <div class="card-body text-center">
                                 <h5 class="card-title" style="margin: 0;">HOJE</h5>
-                                <p style="font-size: small;">12 nov</p>
+                                <p style="font-size: small;"> {{dados_exibir.0.dia}} </p>
                                 <h1 style="color: yellow;"><i class="fa-solid fa-sun"></i></h1>
-                                <p style="font-size: small;">Ensolarado</p>
+                                <p style="font-size: small;"> {{ dados_exibir.0.resumo}} </p>
                                 <div class=" d-flex">
-                                    <p class="card-text text-danger fw-bold">36º</p>
-                                    <p class="card-text text-info fw-bold">/22º</p>
+                                    <p class="card-text text-danger fw-bold"> {{dados_exibir.0.temp_max}}º </p>
+                                    <p class="card-text text-info fw-bold">/{{dados_exibir.0.temp_min}}º </p>
                                 </div>
                             </div>
                         </div>
                         <div class="card col-2 align-items-center" style=" margin: 3px; padding: 0;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" style="margin: 0;">AMANHÃ</h5>
-                                <p style="font-size: small;">13 nov</p>
+                                <h5 class="card-title" style="margin: 0;"> {{dados_exibir.1.dia_semana}} </h5>
+                                <p style="font-size: small;"> {{dados_exibir.1.dia}} </p>
                                 <h1 class="text-info"><i class="fa-solid fa-droplet"></i></h1>
-                                <p style="font-size: small;">Chuvoso</p>
+                                <p style="font-size: small;"> {{dados_exibir.1.resumo}} </p>
                                 <div class=" d-flex">
-                                    <p class="card-text text-danger fw-bold">36º</p>
-                                    <p class="card-text text-info fw-bold">/22º</p>
+                                    <p class="card-text text-danger fw-bold">{{dados_exibir.1.temp_max}}º</p>
+                                    <p class="card-text text-info fw-bold">/{{dados_exibir.1.temp_min}}º</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card col-2 align-items-center" style=" margin: 3px; padding: 0;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" style="margin: 0;">TERÇA</h5>
-                                <p style="font-size: small;">14 nov</p>
+                                <h5 class="card-title" style="margin: 0;"> {{dados_exibir.2.dia_semana}} </h5>
+                                <p style="font-size: small;">{{dados_exibir.2.dia}}</p>
                                 <h1 style="color: yellow;"><i class="fa-solid fa-sun"></i></h1>
-                                <p style="font-size: small;">Ensolarado</p>
+                                <p style="font-size: small;">{{dados_exibir.2.resumo}}</p>
                                 <div class=" d-flex">
-                                    <p class="card-text text-danger fw-bold">36º</p>
-                                    <p class="card-text text-info fw-bold">/22º</p>
+                                    <p class="card-text text-danger fw-bold">{{dados_exibir.2.temp_max}}º</p>
+                                    <p class="card-text text-info fw-bold">/{{dados_exibir.2.temp_min}}º</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card col-2 align-items-center" style=" margin: 3px; padding: 0;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" style="margin: 0;">QUARTA</h5>
-                                <p style="font-size: small;">15 nov</p>
+                                <h5 class="card-title" style="margin: 0;">{{dados_exibir.3.dia_semana}}</h5>
+                                <p style="font-size: small;">{{dados_exibir.3.dia}}</p>
                                 <h1 style="color: gray;"><i class="fa-solid fa-cloud"></i></h1>
-                                <p style="font-size: small;">Nublado</p>
+                                <p style="font-size: small;">{{dados_exibir.3.resumo}}</p>
                                 <div class=" d-flex">
-                                    <p class="card-text text-danger fw-bold">36º</p>
-                                    <p class="card-text text-info fw-bold">/22º</p>
+                                    <p class="card-text text-danger fw-bold">{{dados_exibir.3.temp_max}}º</p>
+                                    <p class="card-text text-info fw-bold">/{{dados_exibir.3.temp_min}}º</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card col-2 align-items-center" style=" margin: 3px; padding: 0;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" style="margin: 0;">QUINTA</h5>
-                                <p style="font-size: small;">16 nov</p>
+                                <h5 class="card-title" style="margin: 0;">{{dados_exibir.4.dia_semana}}</h5>
+                                <p style="font-size: small;">{{dados_exibir.4.dia}}</p>
                                 <h1 style="color: gray;"><i class="fa-solid fa-cloud"></i></h1>
-                                <p style="font-size: small;">Nublado</p>
+                                <p style="font-size: small;">{{dados_exibir.4.resumo}}</p>
                                 <div class=" d-flex">
-                                    <p class="card-text text-danger fw-bold">36º</p>
-                                    <p class="card-text text-info fw-bold">/22º</p>
+                                    <p class="card-text text-danger fw-bold">{{dados_exibir.4.temp_max}}º</p>
+                                    <p class="card-text text-info fw-bold">/{{dados_exibir.4.temp_min}}º</p>
                                 </div>
                             </div>
                         </div>
@@ -102,42 +105,30 @@
                 </div>
                 <div class="col-4 rounded" style=" margin-top: 4%; overflow: hidden;">
                     <div class="" style="background-color: rgb(239, 239, 239);">
-                        <div class="bg-danger row text-white">
-                            <div class="col-1" style="font-size: 50px; margin-left: 2%;"><i
-                                    class="fa-solid fa-triangle-exclamation"></i></div>
-                            <div class="col" style="margin-left: 5%;">
-                                <p style="margin: 0;">Risco singificativo</p>
-                                <h1 style="margin: 0;">Baixa umidade</h1>
+                        <div class="row text-white">
+                            <div class="col bg-primary">
+                                <div style="margin-left: 2%;">
+                                    <p style="margin: 0;">Mais detalhes</p>
+                                    <h1 style="margin: 0;"> {{dados_exibir.0.resumo}}</h1>
+                                </div>
                             </div>
                         </div>
                         <div>
-                            <h5>Âmbito:</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore voluptatum magnam quas
-                                quia
-                                error fuga voluptates nulla. Aliquid earum maiores natus quam neque. Placeat quisquam
-                                esse
-                                dolores culpa sint rem!
-                            </p>
-                            <h5>Início:</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            <h5>Final:</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
+                            <p><i class="fa-solid fa-wind"></i> Direção do vento: {{dados_exibir.0.dir_vento}}</p>
+                            <div>
+                                <p><i class="fa-sharp fa-regular fa-sun"></i> Nascer do sol: {{dados_exibir.0.nascer}}</p>
+                            </div>
+                            
+                            <p><i class="fa-sharp fa-solid fa-sun"></i> Por do sol: {{dados_exibir.0.ocaso}}</p>
+                            <p><i class="fa-solid fa-earth-americas"></i> Estação do ano: {{dados_exibir.0.estacao }} </p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>-->
+    </section>
 
-    {% for objeto in objetos %}
-            <li>{{ objeto.cidade }}</li>
-            
-        {% endfor %}
 </body>
 
 </html>

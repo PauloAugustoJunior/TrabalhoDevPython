@@ -3,7 +3,7 @@
 from django.contrib import admin
 from django.urls import include, path
 
-from app.views import home,login,cadastrar,usuario
+from app.views import home,login,cadastrar,usuario,resultadosPesquisa
 
 # from rest_framework.authtoken.views import obtain_auth_token
 
@@ -13,4 +13,5 @@ urlpatterns = [
     path('login/',login.as_view(), name = 'login'),
     path('cadastrar/',cadastrar.as_view(), name = 'cadastrar'),
     path('usuario/',usuario.as_view(), name = 'usuario'),
+    path('resultados/' , resultadosPesquisa.as_view(),name='resultados_pesquisa'),
 ]
