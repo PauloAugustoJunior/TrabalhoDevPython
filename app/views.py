@@ -1,14 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic import View
-from .models import PrevisaoTempoSimples
+from .models import PrevisaoTempoSimples, PrevisaoTempoDetalhada
 from django.utils import timezone
 from datetime import datetime, timedelta
 
 class home(View):
     def get(self, request):
-        datas_futuras = [datetime.now().date() + timedelta(days=i) for i in range(5)]
-        objetos = PrevisaoTempoSimples.objects.filter(cidade='São Paulo')
+        cidadePesquisa = request.GET.get('cidade', 'Palmas')
+        data_atual = datetime.now().date()
+        data_futura = data_atual + timedelta(days=4)
+        objetos = PrevisaoTempoSimples.objects.filter(cidade=cidadePesquisa, dia__range=(data_atual, data_futura)).order_by('dia')
         campos_exibir = ['cidade','uf','dia','resumo','temp_max','temp_min','dir_vento','int_vento','dia_semana','umidade_max','umidade_min']
         dados_exibir = [{campo: getattr(objeto,campo)for campo in campos_exibir}for objeto in objetos]
         dados_exibir = [
@@ -18,7 +20,10 @@ class home(View):
             }
             for objeto in objetos
         ]
-        return render(request,'base.html',{'dados_exibir':dados_exibir})
+        
+        detalhes = PrevisaoTempoDetalhada.objects.filter(DC_NOME=cidadePesquisa).order_by('DT_MEDICAO').first()
+        
+        return render(request,'base.html',{'dados_exibir':dados_exibir, 'detalhes': detalhes})
     
     
 # class resultadosPesquisa(View):
