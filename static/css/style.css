@@ -1,23 +1,35 @@
 .header-conteiner{
     color: white;
 }
+
 #header-item1{
     margin-left: 10%;
 }
+
 #header-item2{
     margin-left: 15%;
     text-decoration: none;
 }
 
-.drop-conteiner{
-    background-color: rgb(201, 201, 201);
-}
 
 #drop-item{
     margin-left: 1%;
 }
 
+.main{
+    overflow: hidden;
+    container: fluid;
+}
 
+.main-conteiner{
+    margin-left: 10%; 
+    margin-top: 10%;
+    display: flex; 
+}
+
+.main-intens{
+    overflow: hidden;
+}
 
 
 .footer {

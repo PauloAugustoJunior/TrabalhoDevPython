@@ -1,22 +1,33 @@
-# import logging
-
-# from django.conf import settings
-# from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic import View
-# from rest_framework.authtoken.views import ObtainAuthToken
-# from rest_framework.authtoken.models import Token
-# from rest_framework.response import Response
-
-# logger = logging.getLogger('sistema2')
-# Create your views here.
+from .models import PrevisaoTempoSimples
+from django.utils import timezone
+from datetime import datetime, timedelta
 
 class home(View):
     def get(self, request):
-        return render(request,'base.html')
-
+        datas_futuras = [datetime.now().date() + timedelta(days=i) for i in range(5)]
+        objetos = PrevisaoTempoSimples.objects.filter(cidade='São Paulo')
+        campos_exibir = ['cidade','uf','dia','resumo','temp_max','temp_min','dir_vento','int_vento','dia_semana','umidade_max','umidade_min']
+        dados_exibir = [{campo: getattr(objeto,campo)for campo in campos_exibir}for objeto in objetos]
+        dados_exibir = [
+            {
+                campo: getattr(objeto, campo) if campo != 'dia_semana' else getattr(objeto, campo).split('-')[0]
+                for campo in campos_exibir
+            }
+            for objeto in objetos
+        ]
+        return render(request,'base.html',{'dados_exibir':dados_exibir})
     
+    
+# class resultadosPesquisa(View):
+#     def get(self, request):
+#         objetos = PrevisaoTempoSimples.objects.all()
+#         campos_exibir = ['cidade','dia','resumo','temp_max','temp_min','dir_vento','int_vento','dia_semana','umidade_max','umidade_min']
+#         dados_exibir = [{campo: getattr(objeto,campo)for campo in campos_exibir}for objeto in objetos]
+#         return render(request,'resultados_pesquisa.html',{'resultados': resultados_filtrados}) 
+
 class login(View):
     def get(self, request):
         return render(request,'login.html')
